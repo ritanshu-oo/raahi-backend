@@ -18,7 +18,7 @@ const startServer = async () => {
   registerSocketHandlers(io);
 
   // Start listening
-  httpServer.listen(env.port, () => {
+  httpServer.listen(env.port, '0.0.0.0', () => {
     logger.info(`Raahi API server running on port ${env.port}`);
     logger.info(`Environment: ${env.nodeEnv}`);
     logger.info(`Health check: http://localhost:${env.port}/health`);
